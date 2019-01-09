@@ -8,7 +8,7 @@ class SignInPage extends React.Component {
 
 	render() {
 		return (
-			<div></div>
+			<div>Signin</div>
 		)
 	}
 }

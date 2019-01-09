@@ -1,0 +1,59 @@
+@import 'Global.scss';
+
+.custom-nav1 {
+  background-color: $brand-dark-2 !important;
+  height: 80px;
+
+  .navbar-brand {
+    font-size: 2em;
+    font-weight: 300;
+    font-family: 'Roboto', sans-serif;
+    vertical-align: middle;
+  }
+
+  .navbar-logo {
+    height: 50px;
+    vertical-align: middle;
+  }
+
+  .notif-bell {
+    margin-left: 5px;
+  }
+
+  .notif-badge {
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    font-size: $font-little;
+  }
+
+  .notification-dropdown-item {
+    word-wrap: break-all;
+    white-space: normal;
+    width: 90%;
+    font-size: $font-average;
+    float: right;
+    height: 50px;
+  }
+
+  .notification-dropdown-icon {
+    width: 10%;
+    height: 50px;
+    float: left;
+  }
+
+  .profile-little-image {
+    border-radius: 2px
+  }
+}
+
+
+.custom-dropdown {
+  background-color: transparent !important;
+  border-style: none;
+
+  &:focus {
+    box-shadow: none !important;
+    background-color: $brand-gray-3 !important;
+  }
+}

@@ -1,0 +1,274 @@
+@import 'bootstrap/scss/bootstrap.scss';
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900|Roboto:100,300,400,500,700,900');
+
+$font-little: 10px;
+$font-average: 13px;
+$font-big: 16px;
+
+$light-blue: #3498db;
+$light-grey: #bdc3c7;
+
+$brand-color: #7bed9f;
+$brand-blue: #155799;
+
+$brand-grad-color-1: #11998e;
+$brand-grad-color-2: #38ef7d;
+$brand-grad-color-3: #CB356B;
+$brand-grad-color-4: #BD3F32;
+
+$brand-dark-1: #36393F;
+$brand-dark-2: #303339;
+$brand-dark-3: #222428;
+
+$brand-gray-1: #B9BBBE;
+$brand-gray-2: #72767D;
+$brand-gray-3: #595b5e;
+
+$header-gray: #f0f1f2;
+
+$brand-light: #f5f6f7;
+
+$header-height: 80px;
+
+$row-background: #fffddd;
+
+html, body {
+  background-color: $light;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  font-size: 24px !important;
+  padding: 0 !important;
+}
+
+h2 {
+  font-size: 22px !important;
+}
+
+h3 {
+  font-size: 20px !important;
+}
+
+hr {
+  margin: 0 0 !important;
+}
+
+// TODO fix glow pagination
+.page-link {
+  &:focus {
+    background-color: red;
+    outline: none !important;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+  }
+}
+
+.btn-brand {
+  @include button-variant($brand-color, $brand-color);
+  &:focus, &:active {
+    outline: none !important;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+  }
+}
+
+.btn-brand-blue {
+  @include button-variant($brand-blue, $brand-blue);
+  &:focus, &:active {
+    outline: none !important;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+  }
+}
+
+.btn-brand-gray {
+  @include button-variant($header-gray, $gray-300);
+  &:focus, &:active {
+    outline: none !important;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+  }
+}
+
+.alert-dark-danger {
+  @include alert-variant(rgba(231, 76, 60, .05), $danger, $danger);
+  font-size: 13px;
+}
+
+.main-dark {
+  background-color: $brand-dark-2;
+  min-height: calc(100vh - #{$header-height});
+  color: $light;
+}
+
+.dropdown-menu {
+  width: 300px !important;
+}
+
+.card {
+  background-color: transparent;
+
+  .card-header {
+    border-style: none !important;
+
+    .accordion-header-txt {
+      width: 95%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  .card-body {
+    border-style: solid;
+    border-width: 1px 0 0 0;
+    border-color: $gray-300;
+  }
+}
+
+.nav, .nav-tabs {
+  cursor: pointer;
+  padding-bottom: 1px;
+  padding-top: 10px;
+  li {
+    a {
+      background-color: transparent !important;
+      &.nav-link {
+        color: $light-grey;
+        padding-bottom: 10px;
+        border-width: 0px !important;
+        border-bottom-width: 2px !important;
+        &:hover {
+          border-bottom-color: $light-grey !important;
+        }
+      }
+      &.active {
+        font-weight: bold;
+        border-bottom-color: $brand-blue !important;
+        &:hover {
+          border-bottom-color: $brand-blue !important;
+        }
+      }
+      border-radius: 0px !important;
+      border-color: transparent !important;
+    }
+  }
+}
+
+.vertical-align {
+  line-height: 100%;
+  vertical-align: middle;
+}
+
+.font-little {
+  font-size: $font-little;
+}
+
+.font-average {
+  font-size: $font-average;
+}
+
+.font-big {
+  font-size: $font-big;
+}
+
+.gray-link {
+  color: $brand-gray-2;
+
+  &:hover {
+    text-decoration: none;
+    color: $brand-gray-3;
+  }
+}
+
+.blue-link {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.text-wrap {
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.debug {
+  border-style: solid;
+  border-width: 1px;
+  border-color: $blue;
+  background-color: aliceblue;
+}
+
+.dropdown-menu {
+  .dropdown-item {
+    &:focus, &:active {
+      outline: none !important;
+      box-shadow: none !important;
+      -webkit-box-shadow: none !important;
+    }
+  }
+}
+
+.overflow {
+  display: inline-block;
+  width: 75%;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.title {
+  line-height: 40px;
+  vertical-align: bottom;
+}
+
+.title-button {
+  vertical-align: middle;
+}
+
+.react-datepicker__header {
+  background-color: $header-gray;
+}
+
+.react-datepicker__day {
+  &:hover {
+    background-color: $header-gray;
+  }
+}
+
+.react-datepicker__day--selected {
+  background-color: $brand-blue;
+
+  &:hover {
+    background-color: $brand-blue;
+  }
+}
+
+.list-item {
+  &:hover {
+    background-color: $brand-light;
+  }
+}
+
+.quill {
+  background-color: white;
+  border-radius: 5px !important;
+
+  .ql-toolbar {
+    background-color: $header-gray;
+    border-color: $gray-400;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  .ql-container {
+    border-color: $gray-400;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  .ql-editor {
+    min-height: 200px;
+  }
+}

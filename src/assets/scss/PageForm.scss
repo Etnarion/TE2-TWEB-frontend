@@ -1,0 +1,66 @@
+@import 'Global.scss';
+
+.sign-form-container {
+  max-width: 500px;
+  padding: 20px 40px 30px 40px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  background-color: $brand-dark-1;
+  border-color: $brand-dark-3;
+  font-family: 'Roboto', sans-serif;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.05);
+  color: $light;
+
+  h1 {
+    font-weight: 300;
+  }
+
+  p {
+    margin: 10px 0 0 0;
+    font-weight: 400;
+    font-size: 13px;
+  }
+
+  a {
+    color: $brand-color;
+    &:hover {
+      color: $brand-color;
+    }
+  }
+
+  form {
+    label {
+      margin: 5px 0;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: .5px;
+      color: $brand-gray-1;
+    }
+    input {
+      color: $light;
+      &:focus {
+        color: $light;
+      }
+    }
+  }
+
+  .sign-form {
+    background-color: $brand-dark-2;
+    border-color: $brand-dark-3;
+    &:focus, &:active {
+      box-shadow: none !important;
+      background-color: $brand-dark-2;
+      border-color: $brand-color !important;
+    }
+  }
+
+  .action-btn {
+    width: 100%;
+    margin: 10px 0 0 0;
+  }
+}

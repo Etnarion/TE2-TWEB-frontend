@@ -2,7 +2,7 @@ module.exports = {
     "env": {
         "es6": true
     },
-    "extends": "eslint:recommended",
+    "extends": ["eslint:recommended", "plugin:react/recommended"],
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
@@ -13,6 +13,11 @@ module.exports = {
     "plugins": [
         "react"
     ],
+    "globals": {
+        "localStorage": true,
+        "document": true,
+        "process": true
+    },
     "rules": {
         "indent": [
             "error",
