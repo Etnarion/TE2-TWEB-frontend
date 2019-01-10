@@ -1,3 +1,6 @@
 export const HOME = '/'
 export const SIGNIN = '/signin'
 export const SIGNUP = '/signup'
+export const FILMS = '/films'
+export const UPCOMING = '/upcoming'
+export const SUGGESTIONS = '/suggestions'

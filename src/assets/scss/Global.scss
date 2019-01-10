@@ -156,6 +156,15 @@ hr {
   }
 }
 
+.movie_poster {
+  margin: 10px;
+}
+
+.movieList {
+  display: flex;
+  flex-flow: wrap;
+}
+
 .vertical-align {
   line-height: 100%;
   vertical-align: middle;

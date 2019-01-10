@@ -15,7 +15,10 @@ const AuthNav = () => (
 			<NavItem>
 			</NavItem>
 			<NavItem>
-				
+				<NavLink tag={Link} to={routes.FILMS}>Films</NavLink>
+			</NavItem>
+			<NavItem>
+				<NavLink tag={Link} to={routes.UPCOMING}>Upcoming</NavLink>
 			</NavItem>
 		</Nav>
 	</React.Fragment>
