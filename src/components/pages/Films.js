@@ -48,7 +48,13 @@ class Films extends Component {
 
     return (
       <Container>
-        <Button style={{ marginTop: '10px' }} tag={Link} to={routes.SUGGESTIONS}>Suggestions</Button>
+        <Link to={{
+            pathname: routes.SUGGESTIONS,
+            state: { selectedFilms: selectedFilms}
+          }}
+          style={{ marginTop: '10px' }}>
+            Suggestions
+          </Link>
         <div className="movieList">
           {films.map(film => (
             <div className="movieListItem" onClick={() => this.selectMovie(film)}>

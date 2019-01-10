@@ -9,19 +9,22 @@ class Films extends Component {
     super(props)
     this.state = { 
       films: [],
+      genres: [],
+      selectedFilms: this.props.location.state.selectedFilms,
       page: 1
     }
   }
 
   fetchFilms = () => {
-    axios.get(`https://te2-tweb-sam.herokuapp.com/3/movie/upcoming?page=${this.state.page}&api_key=f1be4bafe6f7cb0cb84f5948c5b75497`)
+    this.state.selectedFilms.forEach(element => {
+      axios.get(`https://te2-tweb-sam.herokuapp.com/3/movie/upcoming?page=${this.state.page}&api_key=f1be4bafe6f7cb0cb84f5948c5b75497`)
       .then(result => {
         this.setState(prevState => ({
-          films: result.data.results,
-          hasPreviousPage: prevState.page > 1,
-          hasNextPage: (prevState.page * prevState.pageSize) < result.data.total_results
+          films: [...prevState.films, result]
         }))
       })
+    });
+    
   }
 
   selectMovie = (film) => {
@@ -45,11 +48,11 @@ class Films extends Component {
   }
 
   render() {
-    const { films } = this.state
+    const { selectedFilms } = this.state
 
     return (
       <Container>
-        {films.map(film => (<MovieListItem onClick={e => this.selectMovie(film)} key={film.id} film={film} />))}
+        {selectedFilms.map(film => (<MovieListItem onClick={e => this.selectMovie(film)} key={film.id} film={film} />))}
       </Container>
     )
   }
