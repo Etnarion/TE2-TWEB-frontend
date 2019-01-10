@@ -35,6 +35,5 @@ module.exports = {
             "error",
             "never"
         ],
-        "no-unused-expression": true
     }
 };
