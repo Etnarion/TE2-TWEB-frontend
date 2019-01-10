@@ -1,8 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Nav, NavItem, NavLink, Collapse, Navbar, NavbarToggler, NavbarBrand } from 'reactstrap'
+import { Nav, NavItem, NavLink, Collapse, Navbar, NavbarToggler, NavbarBrand, Button } from 'reactstrap'
 import * as routes from '../constants/routes'
 import '../assets/scss/Header.scss'
+
+const logout = () => {
+	localStorage.removeItem('user')
+}
 
 const AuthNav = () => (
 	<React.Fragment>
@@ -19,6 +23,9 @@ const AuthNav = () => (
 			</NavItem>
 			<NavItem>
 				<NavLink tag={Link} to={routes.UPCOMING}>Upcoming</NavLink>
+			</NavItem>
+			<NavItem>
+				<NavLink tag={Link} to={routes.HOME} onClick={logout}>Log out</NavLink>
 			</NavItem>
 		</Nav>
 	</React.Fragment>

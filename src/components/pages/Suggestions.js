@@ -9,38 +9,39 @@ class Films extends Component {
     super(props)
     this.state = { 
       films: [],
-      genres: [],
       selectedFilms: this.props.location.state.selectedFilms,
       page: 1
     }
   }
 
   fetchFilms = () => {
-    this.state.selectedFilms.forEach(element => {
-      axios.get(`https://te2-tweb-sam.herokuapp.com/3/movie/upcoming?page=${this.state.page}&api_key=f1be4bafe6f7cb0cb84f5948c5b75497`)
+    const genres = []
+    const films = []
+    this.state.selectedFilms.forEach(film => {
+      console.log(film)
+      film.genre_ids.forEach(genre => {
+        if (!genres.includes(genre)) {
+          genres.push(genre)
+        }
+      })
+    })
+    axios.get(`https://te2-tweb-sam.herokuapp.com/3/movie/upcoming?page=${this.state.page}&api_key=f1be4bafe6f7cb0cb84f5948c5b75497`)
       .then(result => {
+        result.data.results.forEach(film => {
+          var toPush = false
+          film.genre_ids.forEach(genre => {
+            if (genres.includes(genre)) {
+              toPush = true
+            }
+          })
+          if (toPush) {
+            films.push(film)
+          }
+        });
         this.setState(prevState => ({
-          films: [...prevState.films, result]
+          films: films
         }))
       })
-    });
-    
-  }
-
-  selectMovie = (film) => {
-    localStorage.getItem('preferences') ? localStorage.getItem('preferences').push(film) : localStorage.setItem('film', [film])
-  }
-  
-  onPreviousClick = () => {
-    this.setState(prevState => ({
-      page: prevState.page - 1
-    }), this.fetchFilms)
-  }
-
-  onNextClick = () => {
-    this.setState(prevState => ({
-      page: prevState.page + 1
-    }), this.fetchFilms)
   }
 
   componentDidMount() {
@@ -48,11 +49,11 @@ class Films extends Component {
   }
 
   render() {
-    const { selectedFilms } = this.state
+    const { films } = this.state
 
     return (
       <Container>
-        {selectedFilms.map(film => (<MovieListItem onClick={e => this.selectMovie(film)} key={film.id} film={film} />))}
+        {films.map(film => (<MovieListItem onClick={e => this.selectMovie(film)} key={film.id} film={film} />))}
       </Container>
     )
   }
