@@ -16,7 +16,9 @@ module.exports = {
     "globals": {
         "localStorage": true,
         "document": true,
-        "process": true
+        "process": true,
+        "module": true,
+        "require": true
     },
     "rules": {
         "indent": [
