@@ -11,7 +11,7 @@ class SignUpPage extends React.Component {
 	}
 
 	componentDidMount() {
-		axios.get('http://localhost:8081/users')
+		axios.get(process.env.BACKEND_URL+'/users')
 			.then(result => {
 				this.setState({
 					users: result.data
