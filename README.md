@@ -1,5 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+### Run locally
+If you want to run this app locally, you're gonna have to go to https://github.com/Etnarion/TE2-TWEB-backend, clone the repo and launch ./start-dev.sh script to start the database connexion. You can then do a npm start on the frontend project root and try the application at http://localhost:3000.
+
 ## Available Scripts
 
 In the project directory, you can run:
