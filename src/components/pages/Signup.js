@@ -1,6 +1,6 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
-import axios from '../../axiosInstance'
+import axios from '../../utils/AxiosService'
 
 class SignUpPage extends React.Component {
 	constructor(props) {
@@ -11,7 +11,7 @@ class SignUpPage extends React.Component {
 	}
 
 	componentDidMount() {
-		axios.get('/users')
+		axios.get(process.env.BACKEND_URL+'/users')
 			.then(result => {
 				this.setState({
 					users: result.data
