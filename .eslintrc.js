@@ -34,6 +34,7 @@ module.exports = {
         "semi": [
             "error",
             "never"
-        ]
+        ],
+        "no-unused-expression": true
     }
 };
